@@ -11,10 +11,10 @@ export const MovieProvider = ({children}) => {
         const storedFavs = localStorage.getItem("favourites")
 
         if (storedFavs) setFavourites(JSON.parse(storedFavs))
-    })
+    }, [])
     
     useEffect(() => {
-        localStorage.setItem('favourites', JSON.stringify(favouirtes))
+        localStorage.setItem('favourites', JSON.stringify(favourites))
     }, [favourites])
 
     const addToFavourites = (movie) => {
