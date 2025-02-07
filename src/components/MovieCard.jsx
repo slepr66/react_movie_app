@@ -1,8 +1,9 @@
 import "../css/MovieCard.css"
+import { useMovieContext } from "../contexts/MovieContext";
 
 function MovieCard({movie}) {
     function onFavouriteClick() {
-        alert("clicked")
+        const {isFavourite, addToFavourites, removeFromFavourites} = useMovieContext()
     };
 
     return (
