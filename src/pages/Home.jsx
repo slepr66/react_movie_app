@@ -2,6 +2,7 @@ import MovieCard from "../components/MovieCard";
 import { useState, useEffect } from "react";
 import {searchMovies, getPopularMovies} from "../services/api";
 import "../css/Home.css"
+import { SimpleGrid } from "@mantine/core";
 
 function Home() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -54,9 +55,9 @@ function Home() {
             {loading ? (
                 <div className="loading">Loading...</div>
             ) : (
-                <div className="movie-grid">
+                <SimpleGrid cols={5}>
                     {movies.map((movie) => (<MovieCard movie={movie} key={movie.id} />))}
-                </div>
+                </SimpleGrid>
             )}
         </div>
     );  
