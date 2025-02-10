@@ -6,7 +6,7 @@ import { SimpleGrid } from "@mantine/core";
 function Favourites() {
     const {favourites} = useMovieContext();
     
-    if (favourites) {
+    if (favourites.length > 0) {
         return (
             <div className="favourites">
                 <h2>Your Favourites</h2>
@@ -15,14 +15,13 @@ function Favourites() {
                 </SimpleGrid>
             </div>
         );
-    } else {
-        return (
-            <div className="favourites-empty">
-                <h2>No Favourites yet!</h2>
-                <p>Start adding movies to your favourites to view them here.</p>
-            </div>
-        );
-    }
+    } 
+    return (
+        <div className="favourites-empty">
+            <h2>No Favourites yet!</h2>
+            <p>Start adding movies to your favourites to view them here.</p>
+        </div>
+    );
 }
 
 export default Favourites
