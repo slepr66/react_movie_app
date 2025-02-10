@@ -55,7 +55,7 @@ function Home() {
             {loading ? (
                 <div className="loading">Loading...</div>
             ) : (
-                <SimpleGrid cols={5}>
+                <SimpleGrid cols={{ base: 1, sm: 3, lg: 5 }}>
                     {movies.map((movie) => (<MovieCard movie={movie} key={movie.id} />))}
                 </SimpleGrid>
             )}
